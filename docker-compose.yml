@@ -1,0 +1,10 @@
+version: '2.4'
+services:
+    httpd:
+        image: httpd
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        volumes:
+          - /home/james/website/Website/:/usr/local/apache2/htdocs/
+          - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
